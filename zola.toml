@@ -1,16 +1,24 @@
-# The URL the site will be built for
 base_url = "https://example.com"
+title = "Fabiano Martins: Developer"
+description = "Fabiano Martins Blog"
 
 # Whether to automatically compile all Sass files in the sass directory
+generate_feeds = true
+
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+theme = "mabuya"
+
 [markdown]
 
 [markdown.highlighting]
 theme = "catppuccin-mocha"
+highlight_code = true
+render_emoji = true
 
 [extra]
 # Put all your custom variables here
+author = "Fabiano Martins"

@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block description %}Fabiano Martins blog{% endblock description %}
+
+{% block content %}
+<div class="post-list">
+{% for year, posts in section.pages | sort(attribute="date") | reverse |group_by(attribute="year") %}
+    {% for month, month_posts in posts | group_by(attribute="month") %}
+        <h2>{{ year }} - {{ month }}</h2>
+        {% for post in  month_posts %}
+            <ul>
+                <li>
+                    <a href="{{ post.permalink }}">
+                        {{ post.title }}
+                    </a>
+                </li>
+            </ul>
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% set section = get_section(path="blog/_index.md") %}
+
+<ul>
+{% for page in section.pages | sort(attribute="date") | reverse %}
+<li>
+  <a href="{{ page.permalink | safe }}">
+    {{ page.date }} - {{ page.title | safe }}
+  </a>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock content %}
