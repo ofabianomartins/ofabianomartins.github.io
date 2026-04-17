@@ -1,6 +1,5 @@
 base_url = "https://example.com"
-title = "Fabiano Martins: Developer"
-description = "Fabiano Martins Blog"
+default_language = "en"
 
 # Whether to automatically compile all Sass files in the sass directory
 generate_feeds = true
@@ -12,6 +11,37 @@ build_search_index = true
 
 theme = "mabuya"
 
+[languages."en"]
+title = "Fabiano Martins: Developer"
+description = "Fabiano Martins Blog"
+generate_feeds = true
+# Zola's default search index languages do not include Portuguese stemmers.
+
+[languages."pt-br"]
+title = "Fabiano Martins: Desenvolvedor"
+description = "Blog do Fabiano Martins"
+generate_feeds = true
+# Zola's default search index languages do not include Portuguese stemmers.
+build_search_index = false
+
+[languages."pt-br".translations]
+nav_archive = "Arquivo"
+nav_tags = "Tags"
+written_by = "Por"
+on_date = "em"
+lang_switch_en = "English"
+lang_switch_pt_br = "Português (BR)"
+footer_credit = 'Feito com <a href="https://www.getzola.org"><u>Zola</u></a> e <a href="https://github.com/semanticdata/mabuya">Mabuya</a>.'
+
+[languages."en".translations]
+nav_archive = "Archive"
+nav_tags = "Tags"
+written_by = "Written by"
+on_date = "on"
+lang_switch_en = "English"
+lang_switch_pt_br = "Português (BR)"
+footer_credit = 'Powered by <a href="https://www.getzola.org"><u>Zola</u></a> and <a href="https://github.com/semanticdata/mabuya">Mabuya</a>.'
+
 [markdown]
 
 [markdown.highlighting]
@@ -22,3 +52,5 @@ render_emoji = true
 [extra]
 # Put all your custom variables here
 author = "Fabiano Martins"
+timeformat = "%B %e, %Y"
+timeformat_pt_br = "%e de %B de %Y"

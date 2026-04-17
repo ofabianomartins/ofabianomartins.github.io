@@ -1,0 +1,28 @@
+{% include "partials/darkmode.html" %}
+
+{% set home_url = get_url(path="@/_index.md", lang=lang) %}
+
+<header>
+  <section class="nav-container">
+    <a class="nav-title" href="{{ home_url | safe }}">
+      <h2>{{ config.title }}</h2>
+    </a>
+    <nav>
+      <ul>
+        {% if config.extra.menu %}
+        {% for menu in config.extra.menu %}
+        <li><a href="{{ get_url(path=menu.url, lang=lang) | safe }}">{{ menu.name }}</a></li>
+        {% endfor %}
+        {% else %}
+        <li><a href="{{ home_url | safe }}">{{ trans(key="nav_archive", lang=lang) }}</a></li>
+        <li><a href="{{ get_url(path='tags', lang=lang) | safe }}">{{ trans(key="nav_tags", lang=lang) }}</a></li>
+        {% endif %}
+        <li class="lang-switch">
+          <a href="{{ get_url(path="@/_index.md", lang="en") | safe }}" hreflang="en" {% if lang == "en" %}aria-current="true"{% endif %}>{{ trans(key="lang_switch_en", lang=lang) }}</a>
+          <span aria-hidden="true"> · </span>
+          <a href="{{ get_url(path="@/_index.md", lang="pt-br") | safe }}" hreflang="pt-BR" {% if lang == "pt-br" %}aria-current="true"{% endif %}>{{ trans(key="lang_switch_pt_br", lang=lang) }}</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</header>
