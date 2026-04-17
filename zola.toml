@@ -1,5 +1,5 @@
 base_url = "https://example.com"
-default_language = "en"
+default_language = "pt_br"
 
 # Whether to automatically compile all Sass files in the sass directory
 generate_feeds = true
