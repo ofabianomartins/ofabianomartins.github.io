@@ -6,19 +6,25 @@
 
 {% block content %}
 <div class="post-list">
-{% for year, posts in section.pages | sort(attribute="date") | reverse |group_by(attribute="year") %}
-    {% for month, month_posts in posts | group_by(attribute="month") %}
-        <h2>{{ year }} - {{ month }}</h2>
-        {% for post in  month_posts %}
-            <ul>
-                <li>
-                    <a href="{{ post.permalink }}">
-                        {{ post.title }}
-                    </a>
-                </li>
-            </ul>
-        {% endfor %}
-    {% endfor %}
+{% for post in section.pages | sort(attribute="date") | reverse %}
+    {% if lang == "pt-br" %}
+    {% set current_month_year = post.date | date(format="%Y - %B", locale="pt_BR") %}
+    {% else %}
+    {% set current_month_year = post.date | date(format="%Y - %B", locale="en_US") %}
+    {% endif %}
+
+    {% if loop.first or current_month_year != last_month_year %}
+        <h2>{{ current_month_year }}</h2>
+        {% set_global last_month_year = current_month_year %}
+    {% endif %}
+
+    <ul>
+        <li>
+            <a href="{{ post.permalink }}">
+                {{ post.title }}
+            </a>
+        </li>
+    </ul>
 {% endfor %}
 </div>
 
