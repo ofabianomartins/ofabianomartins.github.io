@@ -1,5 +1,5 @@
 base_url = "https://example.com"
-default_language = "pt_br"
+default_language = "pt-br"
 
 # Whether to automatically compile all Sass files in the sass directory
 generate_feeds = true
@@ -7,22 +7,15 @@ generate_feeds = true
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+# Portuguese is not a supported search-index language in Zola; enable only for `en`.
+build_search_index = false
 
 theme = "mabuya"
-
-[languages."en"]
-title = "Fabiano Martins: Developer"
-description = "Fabiano Martins Blog"
-generate_feeds = true
-# Zola's default search index languages do not include Portuguese stemmers.
 
 [languages."pt-br"]
 title = "Fabiano Martins: Desenvolvedor"
 description = "Blog do Fabiano Martins"
 generate_feeds = true
-# Zola's default search index languages do not include Portuguese stemmers.
-build_search_index = false
 
 [languages."pt-br".translations]
 nav_archive = "Arquivo"
@@ -32,6 +25,12 @@ on_date = "em"
 lang_switch_en = "English"
 lang_switch_pt_br = "Português (BR)"
 footer_credit = 'Feito com <a href="https://www.getzola.org"><u>Zola</u></a> e <a href="https://github.com/semanticdata/mabuya">Mabuya</a>.'
+
+[languages."en"]
+title = "Fabiano Martins: Developer"
+description = "Fabiano Martins Blog"
+generate_feeds = true
+build_search_index = true
 
 [languages."en".translations]
 nav_archive = "Archive"
