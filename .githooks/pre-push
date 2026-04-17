@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# Validate Brazilian Portuguese in default-language Markdown before push (Gemini API).
+# Install once: ./scripts/install-git-hooks.sh
+# Requires: GEMINI_API_KEY, python3
+# Skip: env var is inherited by git → hook (e.g. SKIP_PT_GRAMMAR=1 git push …)
+set -euo pipefail
+
+if [[ "${SKIP_PT_GRAMMAR:-}" == "1" ]]; then
+  exit 0
+fi
+
+EMPTY_TREE=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+lines=()
+while IFS= read -r line; do
+  [[ -z "${line// }" ]] && continue
+  lines+=("$line")
+done
+
+if [[ ${#lines[@]} -eq 0 ]]; then
+  exit 0
+fi
+
+declare -A seen=()
+for line in "${lines[@]}"; do
+  read -r _local_ref local_sha _remote_ref remote_sha <<<"$line"
+  if [[ "$local_sha" =~ ^0+$ ]]; then
+    continue
+  fi
+  if [[ "$remote_sha" =~ ^0+$ ]]; then
+    mapfile -t chunk < <(git diff --name-only "$EMPTY_TREE" "$local_sha")
+  else
+    mapfile -t chunk < <(git diff --name-only "$remote_sha" "$local_sha")
+  fi
+  for f in "${chunk[@]}"; do
+    [[ -z "$f" ]] && continue
+    seen["$f"]=1
+  done
+done
+
+pt_files=()
+for f in "${!seen[@]}"; do
+  if [[ "$f" =~ ^content/.+\.md$ ]] && [[ ! "$f" =~ \.en\.md$ ]]; then
+    pt_files+=("$f")
+  elif [[ "$f" =~ ^tests/.+\.md$ ]]; then
+    pt_files+=("$f")
+  fi
+done
+
+if [[ ${#pt_files[@]} -eq 0 ]]; then
+  exit 0
+fi
+
+if [[ -z "${GEMINI_API_KEY:-}" ]]; then
+  echo "pre-push: há alterações em Markdown em português (${#pt_files[@]} arquivo(s)), mas GEMINI_API_KEY não está definida." >&2
+  echo "pre-push: exporte GEMINI_API_KEY ou rode SKIP_PT_GRAMMAR=1 git push … para pular." >&2
+  exit 1
+fi
+
+ROOT=$(git rev-parse --show-toplevel)
+cd "$ROOT"
+exec python3 scripts/validate_pt_grammar_gemini.py "${pt_files[@]}"
