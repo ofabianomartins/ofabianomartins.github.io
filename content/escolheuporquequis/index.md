@@ -1,5 +1,5 @@
 +++
-title = "Escolheu porque quis!"
+title = "Escolheu porque quis! O drama de escolher linguagens de programação"
 slug = "escolheu-porque-quis"
 date = "2026-04-18"
 +++
@@ -70,4 +70,4 @@ Eu não tenho tanta certeza. O que a IA fez foi transformar todos os desenvolved
 
 # Conclusão
 
-O objetivo era mostrar que a decisão sobre qual linguagem de programação usar está longe de ser puramente técnica e que o fato de não ser puramente técnica não é um problema. O que importa é se as consequências da decisão escolhida são capazes de ser bancadas pelo time de desenvolvimento e, se as circunstâncias mudarem, é possível ajustar a rota. Enfim, decidir a linguagem de programação nunca é uma tarefa simples se você está fazendo algo que importa. Espero que você um dia tenha a oportunidade de ver a diferença entre essas decisões.
+O objetivo era mostrar que a decisão sobre qual linguagem de programação usar está longe de ser puramente técnica e que o fato de não ser puramente técnica não é um problema. O que importa é se as consequências da decisão escolhida são capazes de ser bancadas pelo time de desenvolvimento e, se as circunstâncias mudarem, é possível ajustar a rota. Enfim, decidir a linguagem de programação nunca é uma tarefa simples se você está fazendo algo que importa.
