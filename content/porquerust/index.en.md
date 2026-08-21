@@ -1,7 +1,7 @@
 +++
 title = "Why I Started Learning Rust"
 slug = "why-i-started-learning-rust"
-date = "2026-04-20"
+date = "2026-08-20"
 +++
 
 My last article was about how choosing languages on development teams
