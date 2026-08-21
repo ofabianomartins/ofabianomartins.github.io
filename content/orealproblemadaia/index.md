@@ -6,151 +6,148 @@ date = "2026-08-20"
 
 # Introdução
 
-Este artigo é apenas uma breve reflexão sobre uma forma de pensar o que é o 
-impacto da IA no dia a dia. Não é para defender profissionais da área
-de tecnologia, mas sim para pensar de forma clara sobre o que deve ser a
-entrega do produto. 
+Este artigo é uma breve reflexão sobre o impacto da IA no dia a dia do
+desenvolvimento de software. Não pretende defender empregos ou status de
+profissionais de tecnologia, e sim esclarecer o que deve ser a entrega do
+produto quando a ferramenta muda. A tese é simples: o problema real não é a
+IA em si, mas a forma como cada desenvolvedor reage a ela — e essa reação
+diz mais sobre ego e autoconhecimento do que sobre a tecnologia.
 
 # O que realmente é a IA e como ela deve ser encarada
 
-Meu pai é um técnico em mecânica industrial. Ele sempre trabalhou com uma pessoa
-que está lá para resolver quando as coisas dão errado e indicar o que fazer para
-que não dêem errado. Quando acontecia um incidente — ou seja, uma máquina da produção
-da empresa quebrava —, ele identificava o problema e solucionava. Isso poderia
-ser só calibrando alguma coisa, aplicando algum produto ou substituindo uma peça. 
-Substituir uma peça poderia ser feito a partir de uma peça do fornecedor ou 
-ele mesmo criando uma peça substituta para a que foi quebrada. 
+Meu pai é técnico em mecânica industrial. O papel dele sempre foi estar lá
+para resolver quando as coisas dão errado e indicar o que fazer para que não
+dêem errado de novo. Quando acontecia um incidente — ou seja, uma máquina da
+produção da empresa quebrava —, ele identificava o problema e solucionava.
+Isso podia ser só calibrando alguma coisa, aplicando algum produto ou
+substituindo uma peça. Substituir uma peça podia ser feito com uma peça do
+fornecedor ou com uma peça substituta que ele mesmo fabricava.
 
-Nesses casos, ele pode usar uma máquina chamada torno, que é um eixo ligado
-a um motor e capaz de rodar em alta velocidade de acordo com a necessidade.
-Essa rotação permite ao usuário modelar a peça usando a rotação da máquina para 
-gerar uma grande simetria ao redor do eixo. A máquina exige o emprego de uma 
-técnica e permite criar peças com uma simetria que, sem ela, é bem mais difícil. 
-Com o avanço da tecnologia, começaram a existir tornos automáticos, que são tornos
-em que você parametriza a peça e ele vai aplicando tudo o que você planejou. Eu
-nunca vi o meu pai se questionando se a peça foi feita pelo torno ou por ele mesmo. 
-No final, o importante era saber se a peça resolveu o problema. 
+Em muitos desses casos, ele usava uma máquina chamada torno: um eixo ligado
+a um motor, capaz de girar em alta velocidade conforme a necessidade. Essa
+rotação permite modelar a peça com simetria ao redor do eixo — algo bem mais
+difícil de fazer à mão. Com o avanço da tecnologia, surgiram tornos
+automáticos, em que você parametriza a peça e a máquina executa o que foi
+planejado. Eu nunca vi meu pai se questionar se a peça tinha sido feita no
+torno ou manualmente. O que importava era saber se a peça resolvia o
+problema.
 
-Obviamente, é compreensível que o nível de avanço entre um torno automático e uma
-LLM é completamente diferente e de abrangências completamente diferentes. 
-Só que o importante é como é o comportamento da ferramenta: muitas pessoas não 
-entendem que a LLM é uma ferramenta. E o código que ela produzir é código que 
-você produziu. No final, o importante é saber como o resultado é aplicado. 
+Obviamente, o salto entre um torno automático e uma LLM é enorme em
+complexidade e abrangência. Mas o princípio é o mesmo: o que importa é tratar
+a ferramenta como ferramenta. Muitas pessoas ainda não enxergam a LLM assim.
+O código que ela gera continua sendo responsabilidade de quem a instruiu —
+assim como a peça do torno continua sendo responsabilidade de quem desenhou
+o projeto. No final, o que conta é como o resultado é aplicado.
 
-É um fato de que a indústria vem, ao máximo possível, removendo o fator humano em
-toda a sua cadeia de produção. Não por uma questão filosófica-ideológica, mas 
-porque isso é mais eficiente e produtivo. Pessoas tiram férias, pessoas ficam
-doentes e pessoas precisam de muito tempo e dedicação para chegar a um padrão de
-execução uniforme. Mecanização garante escala e redução de custo no longo prazo; 
-obviamente, isso faz com que o produto final fique mais barato e pode ocorrer um efeito de 
-commoditização. Então a mecanização é um processo natural da evolução tecnológica.
+A indústria vem, ao máximo possível, removendo o fator humano de toda a cadeia
+de produção — não por ideologia, mas porque isso tende a ser mais eficiente.
+Pessoas tiram férias, ficam doentes e precisam de muito tempo para atingir um
+padrão uniforme de execução. Mecanização garante escala e redução de custo no
+longo prazo; o produto final fica mais barato e pode haver commoditização.
+Isso não é novidade: é o curso natural da evolução tecnológica.
 
-As LLMs, vulgarmente conhecidas como IA, são nada mais, nada menos, do que mais
-uma etapa no processo de avanço tecnológico e desenvolvimento industrial. Muitas
-pessoas atribuem que o uso da IA vai acabar com a qualidade do desenvolvimento
-de software. Isso seria equivalente a ver um grupo de profissionais de mecânica
-industrial sendo contra o uso de tornos automáticos porque diminuiu a qualidade
-das peças geradas. Claramente, isso nunca aconteceu e nem vai acontecer, porque
-se você não desenha a peça correta, ela quebra e não resolve o problema.
-Basicamente, o que define é o resultado. Nenhum técnico industrial acha que é melhor
-fazer uma peça manualmente quando ela pode ser facilmente gerada com alta precisão
-em um torno. As LLMs são nada mais do que o torno mecânico da engenharia de
-software.
+As LLMs — vulgarmente chamadas de IA — são mais uma etapa nesse processo.
+Muita gente teme que a IA degrade a qualidade do software. Seria o equivalente
+a imaginar mecânicos industrializados rejeitando tornos automáticos por
+supostamente piorarem as peças. Isso não aconteceu: peça mal especificada
+quebra e não resolve o problema, independentemente de quem ou do quê a
+fabricou. O que define o valor é o resultado, não o instrumento. Nenhum
+técnico industrial prefere fazer manualmente uma peça que o torno entrega com
+mais precisão. As LLMs ocupam, na engenharia de software, o lugar que o torno
+ocupa na mecânica.
 
-# A psicologia e ego do programador
+# A psicologia e o ego do programador
 
-O cinema criou duas visões sobre programadores: 1) que é uma pessoa com baixa 
-capacidade de interação social que focou suas habilidades intelectuais no 
-estudo da programação em detrimento da sua baixa capacidade de se relacionar; e 
-2) que programadores são gênios com uma capacidade de compreensão da realidade que
-são capazes de quebrar criptografia e ficar com a moça voluptuosa no final da
-história. As duas visões estão erradas porque programadores são pessoas 
-normais. Assim como físicos, químicos, engenheiros etc., são pessoas normais que,
-em sua maioria, têm uma sincera capacidade de ter paciência com o seu
-objeto de estudo e treinar até alcançar proficiência naquilo que fazem. 
+O cinema criou duas visões distorcidas sobre programadores: 1) o nerd socialmente
+incapaz que refugiou-se no código; e 2) o gênio capaz de quebrar criptografia e
+ficar com a moça voluptuosa no final. As duas estão erradas. Programadores são
+pessoas comuns — como físicos, químicos e engenheiros — que, em geral,
+desenvolvem paciência com um objeto de estudo e treinam até alcançar
+proficiência.
 
-Programadores não são mágicos e nem pessoas de baixa capacidade social. O 
-programador é diferente porque ele pode produzir muito resultado sem precisar 
-interagir com outro ser humano. Isso não significa que interagir com outro ser
-humano atrapalha, mas que ele pode gerar resultado sozinho. E isso significa a 
-dedicação de várias horas em que a única recompensa que o profissional tem é a
-carga de dopamina ao chegar no resultado. Então, muitos programadores têm uma boa
-capacidade social, mas ele tem muito mais relação com esse ciclo de busca por 
-essa carga de dopamina. E se for um problema cuja solução não tiver sido resolvida 
-pelo time do desenvolvedor, você ganha a dopamina e a vaidade de resolver aquele 
-problema que ninguém resolveu.
+O que diferencia o programador é a capacidade de produzir muito resultado sem
+interagir com outra pessoa. Isso não significa que a interação atrapalha; só
+que o trabalho pode ser feito sozinho. Muitas vezes isso implica horas de
+dedicação em que a recompensa imediata é a dopamina de chegar ao resultado.
+Muitos programadores têm boa capacidade social, mas o ciclo de resolução de
+problemas pesa mais: quando você resolve sozinho algo que o time não conseguiu,
+ganha dopamina e vaidade juntas.
 
-Existe muita vaidade na profissão de programador, porque muita coisa envolve uma
-aura de conhecimento secreto ou particular que os programadores têm, que na verdade
-é só falta de preguiça com o assunto em questão. Só que, como é uma coisa tão 
-presente no dia a dia das pessoas, isso parece mágica. Ninguém acha um 
-mecânico mágico porque o ofício dele exige um ambiente específico com ferramentas
-específicas e, teoricamente, ele está fazendo atividades físicas. O que ele faz fisicamente
-é o lastro do resultado que ele obtém; então o resultado do mecânico foi pago com
-esforço físico do profissional. No caso do programador, isso não é tão evidente
-porque o esforço é mental e além do fato de não haver atividade física. Isso significa
-que as pessoas têm mais dificuldade de entender que existe um esforço associado
-à profissão de programador. Por isso parece mágica e o desenvolvedor
-precisa se defender. 
+Há muita vaidade na profissão. Parte do que parece conhecimento secreto dos
+programadores é, na verdade, familiaridade com algo que as outras pessoas não
+têm paciência de aprender — e, por estar em todo lugar no dia a dia, parece
+mágica. Ninguém acha o mecânico mágico: o ofício exige ambiente e ferramentas
+específicas, e o esforço físico visível legitima o resultado. No caso do
+programador, o esforço é mental e invisível; por isso o trabalho parece
+mágico e o profissional sente que precisa se defender.
 
-Por outro lado, o desenvolvedor também gosta dessa aura mágica que as pessoas criam,
-porque isso é a recompensa social do tempo que ele despendeu aprendendo o ofício
-de programador. Essa recompensa, uma das marcas do comportamento do programador,
-está ligada ao fato de que ele resolve um problema que ninguém ao redor resolve 
-e às dependências que as pessoas criam por um resultado que não parece exigir esforço. 
-E o que temos que entender é que, dado esse ponto de vista, podemos agrupar os 
-desenvolvedores em 4 grupos: 1) os que são competentes e não precisam dessa relação;
-2) os que são competentes e precisam dessa relação; 3) os que não são competentes
-e não precisam dessa relação; e 4) os que não são competentes e precisam dessa relação. 
+Paradoxalmente, muitos desenvolvedores também gostam dessa aura — é a
+recompensa social pelo tempo investido em aprender o ofício. Essa dinâmica —
+resolver o que ninguém ao redor resolve e colher a dependência alheia por um
+resultado que não parece exigir esforço — explica parte do comportamento da
+profissão.
 
-Os grupos 1 e 2 não são uma diferença técnica, mas sim comportamental e pode-se dizer
-emocional. O integrante do grupo 2 é o profissional com crise do impostor, que 
-ainda não conseguiu amadurecer, seja pessoal ou profissionalmente, para se posicionar. 
-Apesar desses problemas, esses dois grupos são profissionais funcionais que não 
-serão abatidos pelas mudanças de mercado. O grupo 3 faz parte das pessoas que 
-conseguiram instrumentalizar a profissão dentro de um contexto em que aquele profissional
-consegue entregar valor parecendo tecnológico, sem entregar um valor real
-de programador. E o grupo 4 são os profissionais que ainda não conseguiram atingir
-o profissionalismo e, por isso, culpam essas relações. E não tem nenhum problema
-estar em nenhum grupo; o problema é não saber em que grupo você está. 
+Com isso em mente, dá para agrupar desenvolvedores em quatro perfis, cruzando
+competência técnica com a necessidade dessa recompensa social:
+
+1. competentes que não precisam dela;
+2. competentes que ainda precisam;
+3. pouco competentes que não precisam;
+4. pouco competentes que precisam.
+
+A diferença entre os grupos 1 e 2 não é técnica, e sim emocional. O integrante
+do grupo 2 costuma carregar crise do impostor: é funcional, mas ainda não
+amadureceu o suficiente para se posicionar sem validação externa. Apesar
+disso, os grupos 1 e 2 tendem a permanecer funcionais diante das mudanças de
+mercado. O grupo 3 instrumentalizou a profissão em contextos onde entrega valor
+percebido como tecnológico, sem necessariamente entregar profundidade técnica.
+O grupo 4 ainda não atingiu maturidade profissional e tende a externalizar a
+frustração — culpando o mercado, a ferramenta ou a dinâmica social em vez de
+olhar para a própria lacuna.
+
+Não há vergonha em reconhecer em qual grupo você está. O problema é não saber.
 
 # E o que a IA tem a ver com isso
 
-A forma como você responde às mudanças das IAs explica em qual grupo você está
-e, evidentemente, qual o caminho que você deve trilhar para seguir em frente na sua 
-profissão. O grupo 1 entende que a IA é um torno automático e que o seu resultado
-não faz diferença se está sendo produzido pela IA ou não. Esse grupo se beneficia
-facilmente da IA e vai seguir ganhando produtividade e resultado. Basicamente, a
-reação dele é que ele somente ganhou mais uma ferramenta no trabalho. 
+A forma como você reage às IAs indica em qual grupo está e, por extensão, que
+caminho precisa trilhar.
 
-O grupo 2 também ganha uma ferramenta, mas ele se sente mal com a ideia de que não 
-fez nada além de instruir a IA. Logo, ele pensa que a IA pode substituí-lo facilmente
-e que, com menos capacitação técnica, alguém pode aprender a usar a ferramenta. O que não deixa
-de ser verdade, mas é mais difícil do que parece. Pessoas inteligentes com disposição
-e tempo podem aprender qualquer coisa, mas a dificuldade é achar pessoas inteligentes
-com disposição e tempo. O grupo 3 vai reagir usando a IA para manter o status quo; 
-não é a tecnologia que resolve o problema dele. Agora, o grupo 4 vai se dividir em 
-duas reações: 1) a IA é um problema que está fazendo o meu trabalho não ser visto;
-e 2) eu não preciso mais estudar programação e tecnologia, que a IA vai resolver todos
-os meus problemas, então é só deixar com a IA.
+O **grupo 1** enxerga a IA como torno automático: o resultado vale pelo que
+resolve, não por quem — ou o quê — o produziu. Incorpora a ferramenta e ganha
+produtividade.
 
-É perceptível que os grupos 1 e 3 não têm muito problema, porque eles vão ter 
-comportamentos de incorporar a tecnologia, seja na sua competência, seja na sua
-mediocridade. O ponto principal são os grupos 2 e 4.1, que precisam fazer um trabalho
-de lidar emocionalmente com a IA. E eu não falo isso como um juiz; na verdade, eu 
-falo como uma pessoa que já se sentiu e ainda se sente ameaçada pela IA. E no final, 
-eu percebo que esse sentimento de ameaça é muito mais relacionado a questões de ego
-do que a uma verdadeira ameaça gerada pelo avanço tecnológico. Esses 
-grupos se diferenciam do 4.2 porque o 4.2 precisa amadurecer e entender que 
-você precisa se capacitar para isso. A IA não vai fazer o seu trabalho; ela vai te obrigar
-a saber ainda mais o que está fazendo. Não é uma questão emocional; é uma questão 
-real: a IA vai ameaçar o grupo 4.2. 
+O **grupo 2** também ganha uma ferramenta, mas se sente diminuído por "só
+ter instruído a IA". Teme ser substituível por alguém com menos formação técnica
+que aprenda a usar o mesmo instrumento. Não é impossível — pessoas inteligentes
+e dedicadas aprendem qualquer coisa —, mas encontrar gente assim, com tempo
+disponível, é mais raro do que parece.
+
+O **grupo 3** usa a IA para preservar o status quo: a ferramenta não corrige
+falta de profundidade técnica, só a mascara por um tempo.
+
+O **grupo 4** se divide em duas reações distintas:
+
+- **4.1** — "A IA está fazendo meu trabalho parecer invisível" (mesma ferida
+  emocional do grupo 2, com menos base técnica);
+- **4.2** — "Não preciso mais estudar; a IA resolve tudo" (ilusão de
+  atalho).
+
+Os grupos 1 e 3 se adaptam sem crise existencial — cada um à sua maneira, com
+competência ou com mediocridade funcional. Quem precisa de trabalho emocional
+são os grupos 2 e 4.1: aprender a separar identidade do instrumento. Digo isso
+sem julgamento — já me senti, e às vezes ainda me sinto, ameaçado pela IA.
+Percebo que esse medo costuma falar mais de ego do que de substituição real.
+
+O **4.2** é outro caso. Aqui a ameaça é concreta: quem acredita que a IA
+dispensa estudo tende a ficar para trás, porque a ferramenta não faz o
+trabalho por você — ela exige que você saiba ainda melhor o que está pedindo
+e validando.
 
 # Conclusão
 
-A sua reação em relação à IA diz mais sobre você do que sobre
-a IA. Por mais que você julgue que a IA ainda não entregue um resultado com um 
-custo-benefício relevante, ela será aprimorada, assim como muitas outras tecnologias
-foram sendo aprimoradas com o passar do tempo. A internet, no início, era impraticável, 
-mas hoje ela é um recurso básico. Então aperte o cinto e conhece-te a ti mesmo. É o 
-melhor caminho para saber lidar com essa situação e manter a sanidade mental.
+Sua reação à IA revela mais sobre você do que sobre a tecnologia. Mesmo que
+hoje ela ainda não entregue custo-benefício ideal para todo caso, a
+tendência é de melhoria contínua — como aconteceu com a internet, outrora
+impraticável e hoje infraestrutura básica. Aperte o cinto e conhece-te a ti
+mesmo: saber em qual grupo você está é o melhor caminho para lidar com essa
+transição e preservar a sanidade.
