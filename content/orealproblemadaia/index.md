@@ -32,10 +32,10 @@ planejado. Eu nunca vi meu pai se questionar se a peça tinha sido feita no
 torno ou manualmente. O que importava era saber se a peça resolvia o
 problema.
 
-Obviamente, o salto entre um torno automático e uma LLM é enorme em
+Obviamente, o salto entre um torno automático e um LLM é enorme em
 complexidade e abrangência. Mas o princípio é o mesmo: o que importa é tratar
-a ferramenta como ferramenta. Muitas pessoas ainda não enxergam a LLM assim.
-O código que ela gera continua sendo responsabilidade de quem a instruiu —
+a ferramenta como ferramenta. Muitas pessoas ainda não enxergam o LLM assim.
+O código que ele gera continua sendo responsabilidade de quem o instruiu —
 assim como a peça do torno continua sendo responsabilidade de quem desenhou
 o projeto. No final, o que conta é como o resultado é aplicado.
 
@@ -46,14 +46,14 @@ padrão uniforme de execução. Mecanização garante escala e redução de cust
 longo prazo; o produto final fica mais barato e pode haver commoditização.
 Isso não é novidade: é o curso natural da evolução tecnológica.
 
-As LLMs — vulgarmente chamadas de IA — são mais uma etapa nesse processo.
+Os LLMs — vulgarmente chamados de IA — são mais uma etapa nesse processo.
 Muita gente teme que a IA degrade a qualidade do software. Seria o equivalente
 a imaginar mecânicos industrializados rejeitando tornos automáticos por
 supostamente piorarem as peças. Isso não aconteceu: peça mal especificada
 quebra e não resolve o problema, independentemente de quem ou do quê a
 fabricou. O que define o valor é o resultado, não o instrumento. Nenhum
 técnico industrial prefere fazer manualmente uma peça que o torno entrega com
-mais precisão. As LLMs ocupam, na engenharia de software, o lugar que o torno
+mais precisão. Os LLMs ocupam, na engenharia de software, o lugar que o torno
 ocupa na mecânica.
 
 # A psicologia e o ego do programador
