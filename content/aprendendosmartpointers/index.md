@@ -110,17 +110,17 @@ mais tão confiáveis quanto o Rust safe.
 a tratar ele com essa abordagem, mas sem o Vec é necessário implementar uma 
 estrutura de vetor dinâmico. 
 
-```
+```rust
 fn main() {
-    let vetor: Vec<u64> = Vec::new();
+    let mut vetor: Vec<u64> = Vec::new();
     let mut i: u64 = 0;
 
-    while( i < 10) {
-        vetor.push(i)
-        i = i + 1;
+    while i < 10 {
+        vetor.push(i);
+        i += 1;
     }
 
-    println!("Vetor: {}", vetor);
+    println!("Vetor: {:?}", vetor);
 }
 ``` 
 
@@ -141,12 +141,16 @@ mas apenas um valor é possível de ser usado para alterar.
 
 ## Arc
 
-É um valor que pode ser diaponibilizado para várias referências ao mesmo tempo 
+É um valor que pode ser disponibilizado para várias referências ao mesmo tempo 
 que poder ser usado por várias threads.
 
 ## RefCell
 
+É um valor que é referenciado e que é passível de ser alterado.
+
 ## Mutex
+
+É um mutex que bloqueia o acesso quando o lock é obtido pro uma thread. Permite uma escrita.
 
 ## Rwlock
 
