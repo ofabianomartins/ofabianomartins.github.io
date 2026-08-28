@@ -104,11 +104,37 @@ unsafe que permite mais flexibilidade ao alocar e desalocar memória. Então, o 
 essas estruturas fazem é encapsular a gerência de memória e oferecer interfaces 
 mais tão confiáveis quanto o Rust safe.
 
-## Vec
+## Box\<T\>
+
+É um ponteiro para um valor salvo na Heap. As variáveis locais geralmente são salvas
+na região da stack porque são passageiras. Porém, alguns valores precisam ser
+salvos na Heap que é uma região da memória dedicada a dados que precisam persistir
+mais tempo que a região da stack. 
+
+A mecânica desse componente é salvar na stack o endereço de memória que vai apontar
+diretamente para a posição da heap que salva endereço do valor. A mutabilidade 
+depende do valor apresentado e seu compartilhamento precisa ser explícito no 
+código.
+
+```rust
+fn main() {
+    let mut b: Box<i32> = Box::new(10);
+    b = 20;
+
+    println!("Valor: {:?}", b);
+}
+``` 
+
+## Vec\<T\> e String
 
 É uma estrutura que permite um vetor de tamanho varíavel. Os tutoriais não chegam
 a tratar ele com essa abordagem, mas sem o Vec é necessário implementar uma 
-estrutura de vetor dinâmico. 
+estrutura de vetor dinâmico. O objetivo é criar uma versão do Box que permite uma
+série de valores do mesmo tipo T. Esse ponteiro salva na stack o endereço de memória,
+a capacidade do vetor e o tamanho.
+
+A mutabilidade desse objeto é mais ligada ao endereço do que ao valores. Para
+incluir e remover objetos deve-se usar as funções push, pop, insert e remove.
 
 ```rust
 fn main() {
@@ -124,29 +150,128 @@ fn main() {
 }
 ``` 
 
-## String
-
-É um Vec especializado para gerenciar strings. O str é uma referência de tipo de 
-dado fixo. Com um tamanho definido em tempo de compilação o String é uma cadeia
-de caracteres que tem um tamanho variável.
-
-## Box
-
-É um ponteiro para um valor imutável. 
-
 ## Rc
 
-É um valor que pode ser diaponibilizado para várias referências ao mesmo tempo, 
-mas apenas um valor é possível de ser usado para alterar.
+É um ponteiro que pode ser diiaponibilizado para várias referências ao mesmo tempo.
+O uso dele é exclusivo na mesma thread. O Rc pode ser classificao em dois 
+tipos: 1) weak que é uma referências que tem acesso ao borrowed; e 2) Strong que é uma 
+o ponteiro que tem o owned do valor. Conforme suas referências weak são removidas
+o valor permanece na memória e só deve ser removido da memória quando todas as
+referências são removidas da memória principalmente a Strong. Caso a Strong seja
+removida quando ainda existem ponteiros Weak, um ponteiro é movido para ser o 
+novo Strong. 
+
+O objetivo é permitir que estruturas de dados que se alto referenciam várias vezes
+podem ser manipuladas pela linguagem. O exemplo é um grafo que pode ter nós que 
+conectam com vários outros. Esses nós podem ser referenciados por outros nós, 
+essas só é possível se for usando um Rc\<T\> para permitir essas várias referências.
+
+```rust
+enum List {
+    Cons(i32, Rc<List>),
+    Nil,
+}
+
+use crate::List::{Cons, Nil};
+use std::rc::Rc;
+
+fn main() {
+    let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
+    let b = Cons(3, Rc::clone(&a));
+    let c = Cons(4, Rc::clone(&a));
+}
+```
 
 ## Arc
 
 É um valor que pode ser disponibilizado para várias referências ao mesmo tempo 
 que poder ser usado por várias threads.
 
+```rust
+use std::sync::{Arc, Mutex};
+use std::thread;
+
+fn main() {
+    let counter = Arc::new(Mutex::new(0));
+    let mut handles = vec![];
+
+    for _ in 0..10 {
+        let counter = Arc::clone(&counter);
+        let handle = thread::spawn(move || {
+            let mut num = counter.lock().unwrap();
+
+            *num += 1;
+        });
+        handles.push(handle);
+    }
+
+    for handle in handles {
+        handle.join().unwrap();
+    }
+
+    println!("Result: {}", *counter.lock().unwrap());
+}
+```
+
 ## RefCell
 
-É um valor que é referenciado e que é passível de ser alterado.
+É um valor imutável que pode ser alterado em memória. O Rust não permite que você
+tem tenha
+vários acesso mutáveis(capazes de alterar) de uma variável ao mesmo tempo que 
+acessos imutáveis de uma mesma variável. Ou seja, você só pode ter uma situação
+por vez. O RefCell permite que essa regra seja verificada apenas em tempo de 
+execução. Isso permite uma série de programas que não seriam aceitos pela 
+análise estática do compilador Rust, mas que na prática não iria quebrar as regras
+durante a execução do programa. Acontece que caso a regra seja quebrada ao usar o 
+RefCell em execução ele dispara um `panic` durante a execução do programa
+
+```rust 
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::cell::RefCell;
+
+    struct MockMessenger {
+        sent_messages: RefCell<Vec<String>>,
+    }
+
+    impl MockMessenger {
+        fn new() -> MockMessenger {
+            MockMessenger {
+                sent_messages: RefCell::new(vec![]),
+            }
+        }
+    }
+
+    impl Messenger for MockMessenger {
+        fn send(&self, message: &str) {
+            self.sent_messages.borrow_mut().push(String::from(message));
+        }
+    }
+
+    #[test]
+    fn it_sends_an_over_75_percent_warning_message() {
+        let mock_messenger = MockMessenger::new();
+        let mut limit_tracker = LimitTracker::new(&mock_messenger, 100);
+
+        limit_tracker.set_value(80);
+
+        assert_eq!(mock_messenger.sent_messages.borrow().len(), 1);
+    }
+}
+```
+
+
+## Cow
+
+É um ponteiro que permite que um objeto tenha várias referências e todos elas sendo
+borrowed. No momento que uma delas é atualizada, o objeto se clona e salva o owned desse
+novo valor não alterando as outras referências,
+
+
+
+você atualiza a referência ele é torma o owned dessa referência sem apontar 
+uma criação de mensagem
 
 ## Mutex
 
