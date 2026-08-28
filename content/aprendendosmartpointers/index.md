@@ -1,10 +1,8 @@
 +++
 title = "Aprendendo Smartpointers"
 slug = "aprendendosmartpointers"
-date = "2026-08-26"
+date = "2026-08-28"
 +++
-
-
 
 # Introdução
 
@@ -319,16 +317,6 @@ fn main() {
 # Conclusão
 
 A proteção de memória é um paradigma que deve ser considerado para aprimorar a qualidade do desenvolvimento de software e voltar ao uso de linguagens compiladas no dia a dia da programação Web. O tempo de aprimoramento do desenvolvedor ainda será maior que em outras linguagens porque o nível de abstração é bem menor, mas o ganho de performance e aproveitamento de recursos será muito superior, valendo o custo-benefício. Por outro lado, novos paradigmas exigem novas estratégias para implementar o código em estruturas que garantem a segurança de memória. Smart pointers são estruturas de ponteiros que permitem manipular a memória usando interfaces seguras para garantir o comportamento do programa que a análise estática de código não consegue prever. Ainda haverá a oportunidade de programas terem problemas durante a sua execução, mas é garantido que uma classe enorme de programas agora terá a sua execução garantida pelas regras do borrow checker.
-
-
-
-
-
-
-
-
-
-
 
 
 
